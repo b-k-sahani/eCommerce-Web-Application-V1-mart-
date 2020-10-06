@@ -1,0 +1,109 @@
+
+{% extends 'common.html' %}
+
+{% block bikram %}
+    {% include 'admin_menu.html' %}
+    <style>
+    .al
+        {
+        background-color: wheat ;
+            color: maroon;
+            padding: 15px;
+            font-size: 30px;
+            font-family: "Agency FB";
+        }
+    </style>
+
+
+<table class="al" align="center" border="0">
+    <tr>
+    {% for x in data %}
+        <th>
+            <table align="center" border="2">
+    <tr>
+        <th>Employee IDNO</th>
+        <th>{{ x.no }}</th>
+    </tr>
+    <tr>
+        <th>Employee Name</th>
+        <th>{{ x.name }}</th>
+    </tr>
+    <tr>
+        <th>Employee Salary</th>
+        <th>{{ x.contact }}</th>
+    </tr>
+    <tr>
+        <th>Employee Designation</th>
+        <th>{{ x.email }}</th>
+    </tr>
+    <tr>
+        <th>Employee Photo</th>
+        <th><img src="{{ x.photo.url }}" width="150" height="150"></th>
+    </tr>
+</table>
+        </th>
+    {% if forloop.counter|divisibleby:3 %}
+        </tr>
+    {% endif %}
+
+    {% endfor %}
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{##}
+{##}
+{#<table align="center" border="2">#}
+{#    <tr>#}
+{#        <th colspan="8">#}
+{#            {% if messages %}#}
+{#                {% for x in messages %}#}
+{#                    <h2 style="background-color: black;color: gold;text-align: center">#}
+{#                        {{ x }}#}
+{#                    </h2>#}
+{#                {% endfor %}#}
+{#        {% endif %}#}
+{#        </th>#}
+{#    </tr>#}
+{#    <tr><th colspan="8">All Employees Information</th></tr>#}
+{#    <tr>#}
+{#        <th>Employee ID</th>#}
+{#        <th>Employee NAME</th>#}
+{#        <th>Employee SALARY</th>#}
+{#        <th>Employee DESIGNATION</th>#}
+{#        <th>Employee CONTACT NO</th>#}
+{#        <th>Employee IMAGE</th>#}
+{#        <th>Update</th>#}
+{#        <th>Delete</th>#}
+{#    </tr>#}
+{#    {% for x in object_list %}#}
+{#    <tr>#}
+{#        <th>{{ x.no }}</th>#}
+{#        <th>{{ x.name }}</th>#}
+{#        <th>{{ x.salary }}</th>#}
+{#        <th>{{ x.designation }}</th>#}
+{#        <th>{{ x.contact }}</th>#}
+{#        <th><img src="{{ x.photo.url }}" width="150" height="150"></th>#}
+{#        <th>#}
+{#            <a href="{% url 'update_emp' x.no %}">Yes</a>#}
+{#        </th>#}
+{#        <th>#}
+{#            <a href="{% url 'delete_emp' x.no %}">Yes</a>#}
+{#        </th>#}
+{#    </tr>#}
+{#    {% endfor %}#}
+{#</table>#}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'common.html' %}
+
+
+{% block bikram %}
+    {% include "user_menu.html" %}
+
+    <table align="center" border="2">
+        <tr>
+            <th>
+                <img src="{{ data.photo.url }}" width="200" height="200">
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <h1>Welcome Mr/Miss : {{ data.name }}</h1>
+            </th>
+        </tr>
+    </table>
+
+{% endblock %}

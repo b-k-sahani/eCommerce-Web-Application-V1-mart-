@@ -1,0 +1,47 @@
+
+{% extends 'common.html' %}
+
+{% block bikram %}
+        <style>
+            .product__info_title
+    {
+       padding: 10px;
+        width: 100px;
+        background-color: wheat;
+        color: maroon;
+        font-family: "Arial Black";
+        font-size: 20px;
+                width: 200px;
+    }
+
+        .product__info_details
+    {
+        color: wheat;
+        font-family: "Agency FB";
+    }
+        </style>
+
+       <table align="center" border="0" width="400">
+        <tr>
+            <th class="product__info_title">Photo</th>
+            <th class="product__info_title">Price</th>
+            <th class="product__info_title">Product</th>
+            <th class="product__info_title">Status</th>
+        </tr>
+
+        {% for s in data %}
+            <tr>
+            <th class="product__info_details"><img src="{{ s.photo.url }}" alt="images" height="50" width="50"></th>
+            <th class="product__info_details">{{ s.price }}</th>
+            <th class="product__info_details">{{ s.name }}</th>
+            <th class="product__info_details">{{ s.status }}</th>
+            </tr>
+       {% endfor %}
+       <tr>
+           <th class="product__info_title" colspan="4">
+           <a href="{% url 'delete_cart' %}">Empty Cart</a></th>
+
+</tr>
+       </table>
+
+{% endblock %}

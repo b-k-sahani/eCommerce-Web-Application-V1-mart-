@@ -1,0 +1,25 @@
+
+{% extends 'common.html' %}
+
+{% block  bikram %}
+    {% load static %}
+    {% include 'admin_menu.html' %}
+    <style>
+    .admin_info
+    {
+        font-family: "Agency FB";
+        font-size: 20px;
+        color: wheat;
+        width: 350px;
+    }
+    </style>
+
+    <table align="center" border="0">
+    <tr><th rowspan="5"><img src="{% static 'images/customer3.jfif' %}"></th></tr>
+    <tr><th class="admin_info"> Name : Bikram Sahani</th></tr>
+    <tr><th class="admin_info"> Contact No : 8644844440</th></tr>
+    <tr><th class="admin_info"> Email Id : bikram.sahani@yahoo.com</th></tr>
+    <tr><th class="admin_info"> Address : Jajpur , Odisha</th></tr>
+
+    </table>
+{% endblock %}
