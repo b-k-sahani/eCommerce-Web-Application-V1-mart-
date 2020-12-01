@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 
 from Product import settings
 from app import views
@@ -40,6 +40,7 @@ urlpatterns = [
     path('user_home/', views.user_home, name="user_home"),
     path('user_products/', views.user_products, name="user_products"),
     path('uadd_to_cart/', views.uadd_to_cart, name="uadd_to_cart"),
+    path('api/',include('app.api.urls')),
 
 ]
 
